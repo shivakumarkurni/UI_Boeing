@@ -1,0 +1,77 @@
+<div class="container-fluid" style="height:100%">
+    <div class="row" style="height:inherit;">
+        <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 side-nav no-padding navbar navbar-expand-lg navbar-expand-md navbar-expand-xl" style="height:inherit;">
+                <nav class="navbar navbar-inverse sidebar sidenav" role="navigation">
+                        <div class="container-fluid">
+                          <!-- Brand and toggle get grouped for better mobile display -->
+                          <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                            </button>
+                           
+                          </div>
+                          <!-- Collect the nav links, forms, and other content for toggling -->
+                          <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="#" data-toggle="collapse" data-target="#suppliers" class="collapsed supExpand">
+                                            <i class="fa  fa-lg"></i>Suppliers
+                                            <span class="glyphicon glyphicon-chevron-down supplier"></span>
+                                        </a>
+                                    </li>
+                                    <ul class="actioncheckbox sub-menu collapse" id="suppliers">
+                                        <li ng-repeat="supp in html">
+                                            <label>
+                                                <input id={{supp}} type="checkbox" ng-model="selection" ng-checked="selection.indexOf(supp) > -1" ng-click="supplierName(supp)"
+                                                />&nbsp;
+                                                <span>{{supp}}</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <li data-toggle="collapse" data-target="#fields" class="collapsed">
+                                        <a href="#" data-toggle="collapse" data-target="#fields" class="collapsed fieldExpand">
+                                            <i class="fa  fa-lg"></i>Fields
+                                            <span class="glyphicon glyphicon-chevron-down fields"></span>
+                                        </a>
+                                    </li>
+                                    <ul class="actioncheckbox sub-menu collapse" id="fields">
+                                        <li ng-repeat="field in fieldName">
+                                            <label> <input id={{field.name}} type="checkbox" ng-model="selectField" ng-checked="selectField.indexOf(field.name) > -1" ng-click="fieldNames(field.name)"
+                                            /> &nbsp;
+                                            <span class="fieldName">{{field.name}}</span> </label>
+                                        </li>
+                                    </ul>
+                                    <button type="submit" class="btn btn-primary" ng-click="submit()" value="Submit" id="act1Submit">Submit</button>
+                                </ul>
+                          </div>
+                        </div>
+                      </nav>
+
+        </div>
+        <div class="col-sm-9 col-md-10 col-lg-10 col-xl-10 no-padding bodyContent">
+            <!-- <h1>Welcome To Dashboard Panel :)</h1> -->
+            <div class="container-fluid" id="act1Table">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Selected Suppliers: &nbsp;&nbsp;&nbsp;</th>
+                            <th ng-repeat="supp in supplierNames">
+                                <span style="color:#0038A7;">{{supp}} &nbsp;&nbsp;&nbsp;</span>
+                            </th>
+                        </tr>
+                    </table>
+                    <div style="color:red" ng-cloak>
+                        {{suppfieldMessage}} {{supplierMessage}} {{fieldMessage}}
+                    </div>
+                    <br>
+                    <div class="tableMargin">
+                        <table id="myTable1" class="table table-bordered" cellspacing="0" ng-bind-html="deliberatelyTrustDangerousSnippet()"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

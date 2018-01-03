@@ -1,0 +1,81 @@
+<div class="container-fluid" style="height:100%">
+    <div class="row" style="height:inherit">
+        <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 side-nav no-padding  navbar navbar-expand-lg navbar-expand-md navbar-expand-xl" style="height:inherit">
+                <nav class="navbar navbar-inverse sidebar" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                            <ul class="nav navbar-nav" style="border-bottom:0px !important">
+                                        <li>
+                                            <!-- <a href="#" data-toggle="collapse" data-target="#suppliers" class="collapsed supExpand"> -->
+                                                <!-- <i class="fa  fa-lg"></i>Suppliers
+                                                <span class="glyphicon glyphicon-chevron-down supplier"></span> -->
+                                            <!-- </a> -->
+                                        </li>
+                            </ul>
+                        </div>    
+                    </div>
+                </nav>
+        </div>
+
+        <div class="col-sm-9 col-md-10 col-lg-10 col-xl-10 bodyContent">
+            <nav>
+                <div class="nav nav-justified navbar-nav">
+                    <form class="navbar-form navbar-search" role="search" method="POST">
+                        <div>
+                            <p class="searchHeader"></p>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="search" placeholder="Search..." class="form-control" ng-model="searchAPI" />
+
+                            <div class="input-group-btn">
+                                <button id="submitButton" type="button" class="btn btn-search btn-info" ng-click="search(searchAPI)">
+
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="label-icon" onkeypress="if(event.keyCode==13) {javascript:form.submit();}">Search</span>
+
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <div class="row container-fluid no-padding">
+                <div class="searchMssg">
+                    <label id="time" ng-cloak> {{time}} </label>
+                    <br>
+                    <div id="searched">
+                        <label id="suggestion" ng-cloak>{{suggestion}}</label>
+                    </div>
+                    <label id="message" ng-cloak>{{message}}</label>
+                </div>
+                <br>
+
+                <div>
+                    <ul id="searchpage">
+                        <li style="list-style-type: none;" ng-repeat=" value in sortedDatas track by $index">
+                            <b id="searchTitle"> {{value.filename}} | {{value.supplier_name}} | Assessment Year: {{value.year}} | {{value.score}}
+                                | Slide Number: {{value.slide_num}}</b>
+                            <p> {{value.pre_text}}</p>
+                            <p id="curText" ng-bind-html="currentText(value.current_text)"> {{value.current_text}}</p>
+                            <p> {{value.next_text}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="" class="Page" data-pagination="" data-num-pages="numPages()" data-current-page="currentPage" data-max-size="maxSize" data-boundary-links="true">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

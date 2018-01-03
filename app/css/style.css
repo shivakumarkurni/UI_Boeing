@@ -1,0 +1,365 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+/**************************    Activity 4  ***********************/
+        .workflow{
+            margin-left: 20%;
+        }
+
+        .act4Header{
+            margin-left:7%;
+        }
+        #paraContent{
+            resize: none;
+            width: 100%;
+            height: 60vh;        
+            padding: 20px;    
+        }
+        #act4Submit{
+            margin-left: 40%;
+        }
+        #qualifiedList{
+            height: 72vh;
+            overflow-y: auto;
+        }
+        .headColor{
+           color:  #0038A7;
+           font-size:16px;   
+        }
+
+        .workExpand{
+            padding-left:20%;
+        }
+/**************************    Activity 3  ***********************/
+
+        .dateRow{
+              margin-left: 30%;
+        }
+
+        .dropdown{
+             width: 10%;
+             height: 4vh;
+        }
+
+       #toLabel{
+            margin-left: 14%;
+       }
+       #todate{
+           margin-left: 12%;
+       }
+
+       #dateButton{
+            margin-left: 12%;
+       }
+       .dateGreater{
+            color: red;
+       }
+       #act3Table{
+        margin-left: 4%;
+       }
+       #act3Table{
+        max-height: calc(100vh - 280px);
+        /* overflow: scroll; */
+    }
+
+/**************************    Activity 2  ***********************/
+        
+        .input-group{
+            width:100%;
+            margin-left: 10%;
+        }
+		.pagination ul{
+               display: inline-flex;
+               list-style: none;
+        }
+        .pagination ul li{
+            border:1px solid grey;
+            padding:1px 5px 5px 6px;
+            border-radius: .25rem;
+            cursor: pointer;
+        }
+        
+        .pagination {
+            position:absolute;
+            margin: 20px 0;
+                margin-top: 20px;
+                margin-right: 0px;
+                margin-bottom: 20px;
+                margin-left: 8%;
+        }
+
+        #curText{
+            color:#006633;
+        }
+
+        #searchTitle{
+            color:#0037A7;
+        }
+
+        #message{
+            color: #F44336;
+        }
+
+        #time{
+            color: #808080;
+        }
+
+        #suggestion{
+            color:#607D8B;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        #searchpage{
+            margin-left: 9%;
+            overflow-y:auto;
+            height: 47vh;
+        }
+        .searchMssg{
+            margin-left: 12%;
+        } 
+
+     
+/**************************    Activity 1  ***********************/
+         #act1Submit{
+            /* background-color: #D19B3D; */
+            margin-left: 32%;
+        }
+        /* #act1Submit:hover, #act1Submit:active{
+            background-color: #D19B3D;
+        }  */
+        .fieldName {
+            text-transform: capitalize;
+        }
+
+        .supplier{
+           padding-left: 52%;
+        }
+        .fields{
+            padding-left: 62%;
+        }
+        #act1Table{
+            margin-left: 1%;
+        }
+        #dashTable{
+            display:none;
+        }
+/**************************    Overview  ***********************/
+   /* .oTable {
+        max-height: calc(100vh - 120px);
+    } */
+
+    .selected-item th{
+        color:#0038A7;
+    }
+  
+/**************************    index  ***********************/
+
+    .navbar-right{
+        font-size:16px;
+        font-weight: bold;
+
+    }
+
+    .headerPart{
+        padding-bottom: 3.5%;
+    }
+    
+/***************************** Footer ***************************/
+        .mojFooter {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0px;
+            background-color: #222222;
+            color: #ccc;
+            line-height: 36px;
+            padding-bottom: 31px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-family: "Open Sans",sans-serif;
+        }
+
+        small {
+            font-size: 1.5rem !important;
+        }
+/**************************    Common  ***********************/        
+      /* .table-responsive {
+            max-height: calc(100vh - 230px); 
+         }  */
+         .bodyContent{
+            margin-top: 3%;
+         }
+         body{
+             font-size:15px;
+             font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+         }
+         .tableMargin{
+            overflow-y: auto;
+            height: 71vh;
+        }
+/*************************** Side Nav Menu ***********************/
+           
+            .no-padding{
+                padding:0 !important;
+            }
+
+            @media (max-width:762px) {
+                .sidebar{
+                    height:100%;
+                }
+            }
+
+            .sidebar{
+                height:auto;
+            }
+         /* @media (max-width: 764px) {
+            .row{
+                height: 100%;
+            }
+        }
+
+        .container-fluid{
+            height: 100%;
+        } */
+
+         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+         body,
+         html {
+           height: 100%;
+           font-family: 'Open Sans', sans-serif;
+         }
+
+         /*Remove rounded coners*/
+         
+         nav.sidebar.navbar {
+           border-radius: 0px;
+         }
+       
+         
+         nav.sidebar .navbar-nav > li a > i {
+           margin-top: 2px;
+         }
+         /* Add gap to nav and right windows.*/
+         
+         .navbar-inverse {
+           border: none;
+         }
+
+         /* .....NavBar: Icon only with coloring/layout.....*/
+         /*small/medium side display*/
+         
+         @media (min-width: 768px) {
+           
+           /*Center Brand*/
+           nav.sidebar .navbar-brand,
+           nav.sidebar .navbar-header {
+             text-align: center;
+             width: 100%;
+             margin-left: 0px;
+           }
+
+           /*Center Icons*/
+           /* nav.sidebar a {
+             padding-right: 13px;
+           } */
+
+           /*adds border to bottom nav boxes*/
+           /* nav.sidebar .navbar-nav > li {
+             border-bottom: 1px #4c4c4c solid;
+            
+             width:16vw;
+           } */
+
+           nav.sidebar .navbar-nav > li {
+            border-bottom: 1px #4c4c4c solid;
+            /* border-top: 1px #4c4c4c solid; */
+            width:16vw;
+          }
+
+           /* Colors/style dropdown box*/
+           nav.sidebar .navbar-nav .open .dropdown-menu {
+             position: static;
+             float: none;
+             width: auto;
+             margin-top: 0;
+             background-color: transparent;
+             border: 0;
+             -webkit-box-shadow: none;
+             box-shadow: none;
+           }
+
+           /*allows nav box to use 100% width*/
+           nav.sidebar .navbar-collapse,
+           nav.sidebar .container-fluid {
+             padding: 0 0px 0 0px;
+           }
+    
+           /*gives sidebar width/height*/
+           nav.sidebar {
+             /* width: 88%; */
+             height: 100%;
+             float: left;
+             margin-bottom: 0px;
+           }
+           /*give sidebar 100% width;*/
+           nav.sidebar li {
+             width: 100%;
+           }
+           /* Move nav to full on mouse over*/
+           nav.sidebar:hover {
+             margin-left: -1px;
+           }
+         }
+         /* .....NavBar: Fully showing nav bar..... */
+         @media (min-width: 1330px) {
+           /*Show all nav*/
+           nav.sidebar {
+             margin-left: -1vh;
+             float: left;
+             margin-top: -0.3vh;
+           }
+         }
+         nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover,
+         nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+           color: #CCC;
+           background-color: transparent;
+         }
+         .navbar-collapse .navbar-nav ul{   
+             list-style: none;
+         }
+         .navbar-collapse .navbar-nav ul li label{   
+             color: #e1ffff;
+             font-size:13px;
+             font-weight:300 !important;
+             line-height:23px;
+             font-family: verdana;
+         } 
+         .supExpand{
+             height:48px;
+         }
+         .sub-menu li{
+            width:100%;
+            margin-left: -24px;
+            /* background-color: wheat; */
+         }
+         #bs-sidebar-navbar-collapse-1 li:hover {
+            border-left: 3px solid #337AB7;
+            background-color: #4f5b69;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+          }
+          #bs-sidebar-navbar-collapse-1 .sub-menu li:hover {
+            background-color: #222222;
+            border-left: 3px solid #222222;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+          }
+
+         

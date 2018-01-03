@@ -1,0 +1,74 @@
+<div class="container-fluid" ng-controller="activity3Controller" style="height:100%">
+    <div class="row" style="height:inherit">
+        <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 side-nav  no-padding  navbar navbar-expand-lg navbar-expand-md navbar-expand-xl"
+            style="height:inherit">
+            <nav class="navbar navbar-inverse sidebar" role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#" data-toggle="collapse" data-target="#suppliers" class="collapsed supExpand">
+                                    <i class="fa  fa-lg"></i>Suppliers
+                                    <span class="glyphicon glyphicon-chevron-down supplier"></span>
+                                </a>
+                            </li>
+                            <ul class="actioncheckbox sub-menu collapse" id="suppliers">
+                                <li id="listDates" ng-repeat="supplier in filteredSupp " style="padding-left: 5px;">
+                                    <label>
+                                        <input id="supplierRestrict" type="radio" name="supplier" value="{{supplier}}" ng-checked="supplier.checked" ng-model="selection"
+                                            ng-checked="selection.indexOf(supplier) > -1" ng-click="toggleColumn(supplier)" />&nbsp; {{supplier}}
+                                    </label>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col-sm-9 col-md-10 col-lg-10 col-xl-10 bodyContent">
+
+            <div class="row">
+                <div class="dateRow">
+                    <div>
+                        <label id="fromLabel">From Date</label>
+                        <label id="toLabel">To Date</label>
+                    </div>
+                    <div>
+                        <select id="fromdate" class="dropdown" ng-model="selectedDate1">
+                            <option ng-repeat="date in htmlDate" value="{{date}}">{{date}}</option>
+                        </select>
+                        <select id="todate" class="dropdown" ng-model="selectedDate2">
+                            <option ng-repeat="date in htmlDate" value="{{date}}">{{date}}</option>
+                        </select>
+                        <button id="dateButton" type="button" class="btn btn-primary" ng-disabled="isDisabled" ng-click="dateData()">Submit</button>
+                    </div>
+                    <br>
+                    <span class="dateGreater" ng-cloak> {{mess}}</span>
+                    <span class="dateGreater" ng-cloak> {{message}}</span>
+                </div>
+                <div class="tableMargin">
+                    <table class="table table-bordered" ng-bind-html="deliberatelyTrustDangerousSnippet()"> </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

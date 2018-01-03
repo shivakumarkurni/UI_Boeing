@@ -1,0 +1,77 @@
+<div class="container-fluid" style="height:100%">
+  <div class="row" style="height:inherit">
+    <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 side-nav  no-padding  navbar navbar-expand-lg navbar-expand-md navbar-expand-xl"
+      style="height:inherit">
+      <nav class="navbar navbar-inverse sidebar" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#" data-toggle="collapse" data-target="#suppliers" class="collapsed workExpand">
+                  <i class="fa  fa-lg"></i>WorkFlow Statement
+                  <span class="glyphicon glyphicon-chevron-down workExpand"></span>
+                </a>
+              </li>
+              <ul class=" sub-menu collapse" id="suppliers">
+                <li ng-repeat="value in act4_Data" style="padding-left: 5px;">
+                  <label>
+                    <input type="radio" name="value" ng-model="value.sow_id" value="{{value.sow_id}}" ng-checked="value.checked" ng-click="sows(value.sow_id)"
+                    /> &nbsp;SOW {{$index + 1}}
+                    <span class="ng-hide">&nbsp;{{value.sow_id}}</span>
+                  </label>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div>
+      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 bodyContent no-padding">
+
+        <div class="act4Header">
+          <label class="headColor">SOW Content</label>
+          <div>
+            <textarea id="paraContent" rowspan="7" colspan="4" ng-model="sowContents" ng-cloak>{{sowContents}}</textarea>
+            <input type="submit" id="act4Submit" class="btn btn-primary" ng-model="sowContents" ng-click="checkData(sowContents)" value="Submit"
+              onkeypress="if(event.keyCode==13) {javascript:form.submit();}" />
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-5 col-md-6 col-lg-6 col-xl-6 bodyContent no-padding">
+
+        <div class="act4Header">
+          <label class="headColor">List of Qualified Suppliers</label>
+          <div id="qualifiedList">
+            <ol>
+              <li ng-repeat="sowContent in qualifiedContent">
+                <b>Supplier Name: {{sowContent.name}}</b>
+                <br>
+                <b> Overall Score: </b>{{sowContent.overall_score}}
+
+                <br>
+                <b>Sentences:</b>
+                <p ng-repeat="sow in sowContent.sentences">
+                  &nbsp;&nbsp;&nbsp;&nbsp; {{sow}}
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

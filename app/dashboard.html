@@ -1,0 +1,253 @@
+<div class="container-fluid" style="height:100%">
+  <div class="row" style="height:inherit">
+    <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2 side-nav no-padding  navbar navbar-expand-lg navbar-expand-md navbar-expand-xl"
+      style="height:inherit">
+      <nav class="navbar navbar-inverse sidebar " role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#" data-toggle="collapse" data-target="#suppliers" class="collapsed supExpand">
+                  <i class="fa  fa-lg"></i>Suppliers
+                  <span class="glyphicon glyphicon-chevron-down supplier"></span>
+                </a>
+              </li>
+              <ul class="actioncheckbox sub-menu collapse" id="suppliers">
+                <li ng-repeat="(key,value) in supplierValue" class="checker">
+                  <label>
+                    <input id={key}} type="radio" name="key" ng-checked="key.checked" ng-click="toggleSelection(key,value)" /> &nbsp;
+                    <span>{{key}}</span>
+                  </label>
+                </li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="col-sm-9 col-md-10 col-lg-10 col-xl-10 no-padding bodyContent ">
+      <!-- <div id="supName">Supplier Name: {{names}} </div> -->
+      <div class="container-fluid" id="dashTable">
+        <div class="tableMargin">
+          <table class="table table-bordered" cellspacing="0">
+            <tbody class="selected-item">
+              <tr>
+                <th>Supplier Name</th>
+                <td>
+                  <b>{{names}}</b>
+                </td>
+              </tr>
+
+              <!-- Assessment Date -->
+              <tr>
+                <th rowspan="{{assessmentDate_key+1}}" class="fields">Assessment Date</th>
+              </tr>
+              <tr ng-repeat="(key,value) in assessmentDate track by $index">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+              <!-- Assessment Type -->
+              <tr>
+                <th rowspan="{{assess_key+1}}" class="fields">Assessment Type</th>
+              </tr>
+              <tr ng-repeat="(key,value) in assessment">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+              <!-- Supplier Country -->
+              <tr>
+                <th rowspan="{{suppCountry_key+1}}" class="fields">Supplier Country</th>
+              </tr>
+              <tr ng-repeat="(key,value) in suppCountry">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+              <!--Supplier State  -->
+              <tr>
+                <th rowspan="{{suppState_key+1}}" class="fields">Supplier State</th>
+              </tr>
+              <tr ng-repeat="(key,value) in suppState">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+
+              <!-- Supplier City  -->
+              <tr>
+                <th rowspan="{{suppCity_key+1}}" class="fields">Supplier City</th>
+              </tr>
+              <tr ng-repeat="(key,value) in suppCity">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+              <!-- Strengths -->
+              <tr>
+                <th rowspan="{{strength_key + 1}}" class="fields">Strengths</th>
+              </tr>
+              <tr colspan="6" ng-repeat="(key,value) in strength">
+                <td>
+                  <b>{{key}}:</b>
+                  <br>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+
+              <!-- Risk -->
+              <tr>
+                <th rowspan="{{risk_key + 1}}" class="fields">Risk</th>
+              </tr>
+              <tr ng-repeat="(key,value) in risk">
+                <td>
+                  <b>{{key}}:</b>
+                  <br>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+
+              <!-- Observation -->
+              <tr>
+                <th rowspan="{{observ_key + 1}}" class="fields">Observations</th>
+              </tr>
+              <tr ng-repeat="(key,value) in observation">
+                <td>
+                  <b>{{key}}:</b>
+                  <br>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+
+              <!-- Awareness -->
+              <tr>
+                <th rowspan="{{aware_key+1}}" class="fields">Awareness</th>
+              </tr>
+              <tr ng-repeat="(key,value) in awarenes">
+                <td>
+                  <b>{{key}}:</b>
+                  <br>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+
+              <!-- TeamNames & Titles -->
+              <tr>
+                <th rowspan="{{TeamTitle_key+1}}" class="fields" styles="word-wrap: break-word">TeamNames & Titles</th>
+              </tr>
+              <tr rowspan="2" ng-repeat="(key,value) in TeamTitle">
+                <td>
+                  <b>{{key}}: </b>{{value}}</td>
+              </tr>
+
+              <!-- Delegation Level -->
+              <tr>
+                <th rowspan="{{delegation_key+1}}" class="fields" styles="word-wrap: break-word"> Delegation Level</th>
+              </tr>
+              <tr ng-repeat="(key,value) in delegation">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+
+
+              <!-- Recommendation -->
+              <tr>
+                <th rowspan="{{recomm_key +1}}" class="fields">Recommendation</th>
+              </tr>
+              <tr ng-repeat="(key,value) in recommendation">
+                <td>
+                  <b>{{key}}:</b>
+                  <br>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+
+              <!-- Experience -->
+              <tr>
+                <th rowspan="{{experience_key+1}}" class="fields">Experience</th>
+              </tr>
+              <tr ng-repeat="(key,value) in experiences">
+                <td class="letterCapital">
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+
+              <!-- Capability -->
+              <tr>
+                <th rowspan="{{capability_key + 1}}" class="fields">Capability</th>
+              </tr>
+              <tr ng-repeat="(key,value) in capability">
+                <td class="letterCapital">
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+
+              <!-- Engineering Function -->
+              <tr>
+                <th rowspan="{{enggFun_key+1}}" class="fields" styles="word-wrap: break-word">Engineering Function</th>
+              </tr>
+              <tr ng-repeat="(key,value) in enggFun">
+                <td>
+                  <b>{{key}}:
+                    <br> </b>{{value}}</td>
+              </tr>
+              <!-- Engineering Sub-function -->
+              <tr>
+                <th rowspan="{{enggSubFun_key+1}}" class="fields" styles="word-wrap: break-word">Engineering Sub Function</th>
+              </tr>
+              <tr ng-repeat="(key,value) in enggSubFun">
+                <td>
+                  <b>{{key}}:
+                    <br> </b>{{value}}</td>
+              </tr>
+              <!-- Supplier Abbrevation -->
+              <tr>
+                <th rowspan="{{suppAbbrevation_key+1}}" class="fields">Abbrevation</th>
+              </tr>
+              <tr ng-repeat="(key,value) in suppAbbrevation">
+                <td>
+                  <b>{{key}}:</b>{{value}}</td>
+              </tr>
+
+              <!-- Airplane Program -->
+              <tr>
+                <th rowspan="{{airplane_key+1}}" class="fields">Airplane Program</th>
+              </tr>
+              <tr ng-repeat="(key,value) in airplane">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}
+                </td>
+              </tr>
+
+              <!-- Work Package -->
+              <tr>
+                <th rowspan="{{workPackage_key+1}}" class="fields">Work Package</th>
+              </tr>
+              <tr ng-repeat="(key,value) in workPackage">
+                <td class="letterCapital">
+                  <b class="ng-hide">{{key}}:</b>
+                  <p ng-bind-html="value">{{value}}</p>
+                </td>
+              </tr>
+              <!-- Certificates -->
+              <tr>
+                <th rowspan="{{certificates_key+1}}" class="fields">Certifications</th>
+              </tr>
+              <tr ng-repeat="(key,value) in certificates">
+                <td>
+                  <b class="ng-hide">{{key}}:</b>{{value}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
